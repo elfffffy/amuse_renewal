@@ -1183,6 +1183,7 @@ section {
     transform: rotateY(180deg);
     opacity: 0;
 }
+
 .brand .inner .card_list .card.flip2 .front {
     transform: rotateY(180deg);
     opacity: 0;
@@ -1192,6 +1193,7 @@ section {
     transform: rotateY(0);
     opacity: 1;
 }
+
 .brand .inner .card_list .card.flip2 .back {
     transform: rotateY(0);
     opacity: 1;
@@ -1217,6 +1219,11 @@ section {
 .ad .swiper-slide a img {
     width: 100%;
     height: 100%;
+}
+
+.ad .swiper-slide a img.tablet,
+.ad .swiper-slide a img.mobile {
+    display: none;
 }
 
 /******************** refurb ***********************/
@@ -1848,6 +1855,7 @@ section {
     #main .more_btn.on::before {
         right: -42px;
     }
+
     #main .more_btn::after {
         width: 30px;
         height: 30px;
@@ -1898,6 +1906,7 @@ section {
         line-height: 20px;
         font-size: 14px;
     }
+
     .price3 s {
         font-size: 14px;
     }
@@ -1912,6 +1921,7 @@ section {
         bottom: auto;
         top: 10px;
     }
+
     .slide3 .item_box .swiper-slide figure .menu button {
         width: 35px;
         height: 35px;
@@ -1919,6 +1929,7 @@ section {
         margin-left: auto;
         margin-right: 10px;
     }
+
     .slide3 .item_box .swiper-slide figure .menu button img {
         width: 28px;
         height: 30px;
@@ -1946,12 +1957,15 @@ section {
     .event .item_wrap .item {
         width: 49%;
     }
+
     .event .item_wrap .item:nth-child(2):before {
         display: none;
     }
+
     .event .item_wrap .item:last-child {
         display: none;
     }
+
     .event .item_wrap .item .text h3 {
         font-size: 18px;
     }
@@ -1966,11 +1980,11 @@ section {
     #main .event .title span.more_btn::after {
         right: -45px;
     }
-    
+
     #main .event .title span.more_btn::before {
         right: -30px;
     }
-    
+
     #main .event .title .more_btn.on::before {
         right: -42px;
     }
@@ -2005,6 +2019,15 @@ section {
         width: 49%;
         height: 35vw;
         max-height: 800px;
+    }
+
+    .ad .swiper-slide a img.pc,
+    .ad .swiper-slide a img.mobile {
+        display: none;
+    }
+
+    .ad .swiper-slide a img.tablet {
+        display: block;
     }
 }
 
