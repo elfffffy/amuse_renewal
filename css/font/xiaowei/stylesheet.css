@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'XiaoWei';
+    src: url('font/xioawei/ZCOOLXiaoWei-Regular.eot');
+    src: url('font/xioawei/ZCOOLXiaoWei-Regular.eot?#iefix') format('embedded-opentype'),
+        url('font/xioawei/ZCOOLXiaoWei-Regular.woff2') format('woff2'),
+        url('font/xioawei/ZCOOLXiaoWei-Regular.woff') format('woff'),
+        url('font/xioawei/ZCOOLXiaoWei-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

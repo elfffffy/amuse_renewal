@@ -1,0 +1,118 @@
+@charset 'utf-08';
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap');
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('font/pretendard/Pretendard-Bold.eot');
+    src: url('font/pretendard/Pretendard-Bold.eot?#iefix') format('embedded-opentype'),
+        url('font/pretendard/Pretendard-Bold.woff2') format('woff2'),
+        url('font/pretendard/Pretendard-Bold.woff') format('woff'),
+        url('font/pretendard/Pretendard-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('font/pretendard/Pretendard-Regular.eot');
+    src: url('font/pretendard/Pretendard-Regular.eot?#iefix') format('embedded-opentype'),
+        url('font/pretendard/Pretendard-Regular.woff2') format('woff2'),
+        url('font/pretendard/Pretendard-Regular.woff') format('woff'),
+        url('font/pretendard/Pretendard-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('font/pretendard/Pretendard-Medium.eot');
+    src: url('font/pretendard/Pretendard-Medium.eot?#iefix') format('embedded-opentype'),
+        url('font/pretendard/Pretendard-Medium.woff2') format('woff2'),
+        url('font/pretendard/Pretendard-Medium.woff') format('woff'),
+        url('font/pretendard/Pretendard-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('font/pretendard/Pretendard-SemiBold.eot');
+    src: url('font/pretendard/Pretendard-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('font/pretendard/Pretendard-SemiBold.woff2') format('woff2'),
+        url('font/pretendard/Pretendard-SemiBold.woff') format('woff'),
+        url('font/pretendard/Pretendard-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HanwhaB';
+    src: url('font/hanwha/Hanwha_B.eot');
+    src: url('font/hanwha/Hanwha_B.eot?#iefix') format('embedded-opentype'),
+        url('font/hanwha/Hanwha_B.woff2') format('woff2'),
+        url('font/hanwha/Hanwha_B.woff') format('woff'),
+        url('font/hanwha/Hanwha_B.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HanwhaR';
+    src: url('font/hanwha/Hanwha_R.eot');
+    src: url('font/hanwha/Hanwha_R.eot?#iefix') format('embedded-opentype'),
+        url('font/hanwha/Hanwha_R.woff2') format('woff2'),
+        url('font/hanwha/Hanwha_R.woff') format('woff'),
+        url('font/hanwha/Hanwha_R.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.zcool-xiaowei-regular {
+    font-family: "ZCOOL XiaoWei", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Erode';
+    src: url('font/erode/Erode-Regular.eot');
+    src: url('font/erode/Erode-Regular.eot?#iefix') format('embedded-opentype'),
+        url('font/erode/Erode-Regular.woff2') format('woff2'),
+        url('font/erode/Erode-Regular.woff') format('woff'),
+        url('font/erode/Erode-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Erode';
+    src: url('font/erode/Erode-Medium.eot');
+    src: url('font/erode/Erode-Medium.eot?#iefix') format('embedded-opentype'),
+        url('font/erode/Erode-Medium.woff2') format('woff2'),
+        url('font/erode/Erode-Medium.woff') format('woff'),
+        url('font/erode/Erode-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Erode';
+    src: url('font/erode/Erode-Semibold.eot');
+    src: url('font/erode/Erode-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('font/erode/Erode-Semibold.woff2') format('woff2'),
+        url('font/erode/Erode-Semibold.woff') format('woff'),
+        url('font/erode/Erode-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+  

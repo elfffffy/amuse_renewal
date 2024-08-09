@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Hanwha B';
+    src: url('Hanwha_B.eot');
+    src: url('Hanwha_B.eot?#iefix') format('embedded-opentype'),
+        url('Hanwha_B.woff2') format('woff2'),
+        url('Hanwha_B.woff') format('woff'),
+        url('Hanwha_B.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Hanwha R';
+    src: url('Hanwha_R.eot');
+    src: url('Hanwha_R.eot?#iefix') format('embedded-opentype'),
+        url('Hanwha_R.woff2') format('woff2'),
+        url('Hanwha_R.woff') format('woff'),
+        url('Hanwha_R.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

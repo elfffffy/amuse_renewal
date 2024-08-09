@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Erode';
+    src: url('font/erode/Erode-Regular.eot');
+    src: url('font/erode/Erode-Regular.eot?#iefix') format('embedded-opentype'),
+        url('font/erode/Erode-Regular.woff2') format('woff2'),
+        url('font/erode/Erode-Regular.woff') format('woff'),
+        url('font/erode/Erode-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Erode';
+    src: url('font/erode/Erode-Medium.eot');
+    src: url('font/erode/Erode-Medium.eot?#iefix') format('embedded-opentype'),
+        url('font/erode/Erode-Medium.woff2') format('woff2'),
+        url('font/erode/Erode-Medium.woff') format('woff'),
+        url('font/erode/Erode-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Erode';
+    src: url('font/erode/Erode-Semibold.eot');
+    src: url('font/erode/Erode-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('font/erode/Erode-Semibold.woff2') format('woff2'),
+        url('font/erode/Erode-Semibold.woff') format('woff'),
+        url('font/erode/Erode-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+

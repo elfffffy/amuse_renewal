@@ -1,0 +1,33 @@
+<script>
+    $(function () {
+        let bannerText = $('.banner ul li');
+        let bannerClose = $('.banner .close');
+        let i = 0;
+
+        setInterval(function () {
+            i++;
+            if (i >= bannerText.length) {
+                i = 0;
+            }
+            bannerText.removeClass('on');
+            bannerText.eq(i).addClass('on');
+        }, 5000);
+        bannerClose.click(function () {
+            $('.banner').hide();
+            $('.header').css('top', '0');
+            $('.header .search_content .inner .top').css('margin-top', '0');
+            $('.main_visual .swiper .swiper-slide .text').css('top', '35rem');
+            $('.amuse_pick .content .title').css('top', '0');
+        })
+    })//script end
+</script>
+<div class="banner">
+    <ul>
+        <li class="on"><a href="#">[WELCOME] 첫 구매 6900원~ 혜택</a></li>
+        <li><a href="#">[NEW] AMUSE x HELLO KITTY 런칭 기념 GIFT</a></li>
+        <li><a href="#">[NEW] 세라믹 파운데이션 & 파우더 런칭 up to 22%</a></li>
+    </ul>
+    <button class="close">
+        <img src="../img/00icon/x-close.svg" alt="close-button" />
+    </button><!-- .close end -->
+</div><!-- .banner end -->

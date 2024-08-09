@@ -1,0 +1,324 @@
+<script>
+    $(function () {
+        let header = $('.header');
+        let bestSection = $('.best');
+        let amusePickSection = $('.amuse_pick');
+        let eventSection = $('.event');
+        $(window).scroll(function () {
+            let scrollBar = $(window).scrollTop();
+            if ($(window).width() > 1024) {
+                if (scrollBar > bestSection.offset().top - 200) {
+                    header.addClass('on');
+                }
+                if (scrollBar <= bestSection.offset().top - 200) {
+                    header.removeClass('on');
+                }
+                if (scrollBar >= amusePickSection.offset().top - 100) {
+                    header.stop().slideUp();
+                }
+                if (scrollBar < amusePickSection.offset().top - 100) {
+                    header.stop().slideDown();
+                }
+                if (scrollBar >= eventSection.offset().top - 150) {
+                    header.stop().slideDown();
+                }
+            }
+            if ($(window).width() <= 1024) {
+                if (scrollBar > bestSection.offset().top - 150) {
+                    header.addClass('on');
+                }
+                if (scrollBar <= bestSection.offset().top - 150) {
+                    header.removeClass('on');
+                }
+                if (scrollBar >= amusePickSection.offset().top - 50) {
+                    header.stop().slideUp();
+                }
+                if (scrollBar < amusePickSection.offset().top - 50) {
+                    header.stop().slideDown();
+                }
+                if (scrollBar >= eventSection.offset().top - 50) {
+                    header.stop().slideDown();
+                }
+            }
+
+
+        })
+
+        let pcNav = $('.pc_nav .gnb > li');
+        let pcDepth02 = $('.pc_nav .depth02');
+
+        pcNav.mouseenter(function () {
+            $(this).children('.depth02').stop().slideDown();
+            $(this).addClass('on');
+
+        })
+
+        pcNav.mouseleave(function () {
+            pcDepth02.stop().fadeOut(300);
+            $(this).removeClass('on');
+        })
+
+        let searchBtn = $('.search button');
+        let searchBox = $('.search_content');
+        let searchCloseBtn = $('.search .close');
+        let langBtn = $('.lang button');
+        let langBox = $('.lang .depth02');
+        let langList = $('.lang .depth02 li');
+
+        searchBtn.click(function () {
+            searchBox.slideDown();
+        })
+        searchCloseBtn.click(function () {
+            searchBox.slideUp();
+        })
+        langBtn.click(function () {
+            langBox.slideToggle();
+        })
+        langList.click(function () {
+            langList.removeClass('on');
+            $(this).addClass('on');
+            langBox.slideUp();
+        })
+
+        let mobileMenu = $('.mobile_menu .menu');
+        let mobileNav = $('.mobile_menu_content');
+        let mobileClose = $('.mobile_menu .close');
+
+        mobileMenu.click(function () {
+            mobileNav.css('left', '0');
+        })
+
+        mobileClose.click(function () {
+            mobileNav.css('left', '-100%');
+        })
+
+        let mobileDepth01 = $('.mobile_menu .gnb .depth01');
+        let mobileDepth02 = $('.mobile_menu .depth02');
+        let mobileDepth02List = $('.mobile_menu .depth02 li');
+        let plusBtn = $('.mobile_menu ')
+
+        for (let i = 0; i < mobileDepth01.length; i++) {
+            if (mobileDepth01.eq(i).next().css('display') === 'none') {
+                mobileDepth01.eq(i).addClass('on');
+            }
+        }
+
+        mobileDepth01.click(function () {
+            mobileDepth01.removeClass('rotate');
+            $(this).addClass('rotate');
+            if ($(this).next().css('display') === 'none') {
+                $(this).next().removeClass('rotate');
+                mobileDepth02.slideUp();
+                $(this).next().slideDown();
+            }
+            else {
+                $(this).next().slideUp();
+                mobileDepth01.removeClass('rotate');
+            }
+        })
+        mobileDepth02List.mouseenter(function () {
+            $(this).addClass('on');
+        })
+        mobileDepth02List.mouseleave(function () {
+            mobileDepth02List.removeClass('on');
+        })
+    })//script end
+</script>
+
+<header class="header">
+    <div class="inner">
+        <h1 class="logo">
+            <a href="#">
+                <img src="../img/logo.png" alt="amuse-logo" />
+            </a>
+        </h1><!-- .logo end -->
+
+        <nav class="pc pc_nav">
+            <ul class="gnb">
+                <li>
+                    <a href="#" class="depth01">SHOP ALL</a>
+                    <ul class="depth02">
+                        <li><a href="#">BEST</a></li>
+                        <li><a href="#">NEW</a></li>
+                        <li><a href="#">ONLY AMUSE</a></li>
+                        <li><a href="#">FACE</a></li>
+                        <li><a href="#">SUNCARE</a></li>
+                        <li><a href="#">LIP</a></li>
+                        <li><a href="#">EYE</a></li>
+                        <li><a href="#">WELLNESS</a></li>
+                        <li><a href="#">AgoodMUSE</a></li>
+                    </ul><!-- depth02 end -->
+                </li>
+                <li>
+                    <a href="#" class="depth01">ABOUT</a>
+                    <ul class="depth02">
+                        <li><a href="#">ABOUT US</a></li>
+                        <li><a href="#">AMUSE GIRL</a></li>
+                        <li><a href="#">MEMBERSHIP</a></li>
+                        <li><a href="#">LOOKBOOK</a></li>
+                    </ul><!-- depth02 end -->
+                </li>
+                <li>
+                    <a href="#" class="depth01">WELLNESS</a>
+                </li>
+                <li>
+                    <a href="#" class="depth01">SHOWROOM</a>
+                </li>
+                <li>
+                    <a href="#" class="depth01">STOCKIST</a>
+                    <ul class="depth02">
+                        <li><a href="#">OFFLINE STORE</a></li>
+                        <li><a href="#">ONLINE STORE</a></li>
+                        <li><a href="#">GLOBAL STORE</a></li>
+                    </ul><!-- depth02 end -->
+                </li>
+                <li>
+                    <a href="#" class="depth01">COMMUNITY</a>
+                    <ul class="depth02">
+                        <li><a href="#">EVENT</a></li>
+                        <li><a href="#">REVIEW</a></li>
+                        <li><a href="#">NOTICE</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul><!-- depth02 end -->
+                </li>
+            </ul><!-- .gnb end -->
+        </nav><!-- .pc_nav end -->
+
+        <div class="util">
+            <div class="search">
+                <button><img src="../img/00icon/search-md.svg" alt="search"></button>
+                <div class="search_content">
+                    <div class="inner">
+                        <div class="top">
+                            <h1 class="logo">
+                                <a href="#">
+                                    <img src="../img/logo.png" alt="amuse-logo" />
+                                </a>
+                            </h1><!-- .logo end -->
+                            <button class="close">
+                                <img src="../img/00icon/x-close.svg" alt="">
+                            </button>
+                        </div><!-- top end -->
+                        <div class="bottom">
+                            <div class="box">
+                                <input type="text" placeholder="검색어를 입력해주세요.">
+                                <button class="submit">
+                                    <img src="../img/00icon/search-md.svg" alt="search">
+                                </button><!-- .submit -->
+                            </div><!-- .box end -->
+                        </div><!-- .bottom end -->
+                    </div><!-- .inner end -->
+                </div><!-- .search_content -->
+            </div><!-- .search end -->
+            <button class="pc mypage">
+                <img src="../img/00icon/user-01.svg" alt="user">
+            </button><!-- .mypage end -->
+            <button class="shopping_bag">
+                <img src="../img/00icon/shopping-bag-02.svg" alt="shopping-bag">
+            </button><!-- .mypage end -->
+            <div class="pc lang">
+                <ul>
+                    <li class="depth01">
+                        <button><img src="../img/00icon/globe-02.svg" alt="language"></button>
+                        <ul class="depth02">
+                            <li class="on">KOR</li>
+                            <li>ENG</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- .lang end -->
+        </div><!-- .pc_util end -->
+
+        <div class="mobile mobile_menu">
+            <button class="menu">
+                <img src="../img/00icon/menu-02.svg" alt="menu">
+            </button><!-- .menu end -->
+            <div class="mobile_menu_content">
+                <div class="top_mix">
+                    <div class="top">
+                        <h1 class="logo">
+                            <a href="#">
+                                <img src="../img/logo.png" alt="amuse-logo" />
+                            </a>
+                        </h1><!-- .logo end -->
+                        <button class="close">
+                            <img src="../img/00icon/x-close.svg" alt="close">
+                        </button><!-- .close end -->
+                        <div class="util">
+                            <button class="mypage">
+                                <img src="../img/00icon/user-01.svg" alt="user">
+                            </button><!-- .mypage end -->
+                            <div class="lang">
+                                <ul>
+                                    <li class="depth01">
+                                        <button><img src="../img/00icon/globe-02.svg" alt="language"></button>
+                                        <ul class="depth02">
+                                            <li>KOR</li>
+                                            <li>ENG</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div><!-- .lang end -->
+                        </div><!-- .util end -->
+                    </div><!-- .top end -->
+                    <ul class="gnb">
+                        <li>
+                            <a href="#" class="depth01">SHOP ALL</a>
+                            <ul class="depth02">
+                                <li><a href="#">BEST</a></li>
+                                <li><a href="#">NEW</a></li>
+                                <li><a href="#">ONLY AMUSE</a></li>
+                                <li><a href="#">FACE</a></li>
+                                <li><a href="#">SUNCARE</a></li>
+                                <li><a href="#">LIP</a></li>
+                                <li><a href="#">EYE</a></li>
+                                <li><a href="#">WELLNESS</a></li>
+                                <li><a href="#">AgoodMUSE</a></li>
+                            </ul><!-- depth02 end -->
+                        </li>
+                        <li>
+                            <a href="#" class="depth01">ABOUT</a>
+                            <ul class="depth02">
+                                <li><a href="#">ABOUT US</a></li>
+                                <li><a href="#">AMUSE GIRL</a></li>
+                                <li><a href="#">MEMBERSHIP</a></li>
+                                <li><a href="#">LOOKBOOK</a></li>
+                            </ul><!-- depth02 end -->
+                        </li>
+                        <li>
+                            <a href="#" class="depth01">WELLNESS</a>
+                        </li>
+                        <li>
+                            <a href="#" class="depth01">SHOWROOM</a>
+                        </li>
+                        <li>
+                            <a href="#" class="depth01">STOCKIST</a>
+                            <ul class="depth02">
+                                <li><a href="#">OFFLINE STORE</a></li>
+                                <li><a href="#">ONLINE STORE</a></li>
+                                <li><a href="#">GLOBAL STORE</a></li>
+                            </ul><!-- depth02 end -->
+                        </li>
+                        <li>
+                            <a href="#" class="depth01">COMMUNITY</a>
+                            <ul class="depth02">
+                                <li><a href="#">EVENT</a></li>
+                                <li><a href="#">REVIEW</a></li>
+                                <li><a href="#">NOTICE</a></li>
+                                <li><a href="#">FAQ</a></li>
+                            </ul><!-- depth02 end -->
+                        </li>
+                    </ul><!-- .gnb end -->
+                </div><!-- .top end -->
+
+                <div class="bottom">
+                    <ul>
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">회원가입</a></li>
+                        <li><a href="#">비회원 주문조회</a></li>
+                    </ul>
+                </div><!-- .bottom end -->
+            </div><!-- mobile_menu_content -->
+        </div><!-- .mobile_menu end -->
+    </div><!-- .inner end -->
+</header><!-- #header end -->

@@ -1,0 +1,68 @@
+<script>
+    $(function () {
+        let footerBtn = $('.footer .seek span');
+        let footerDetail = $('.footer .hide');
+
+        footerBtn.click(function () {
+            if (footerDetail.css('display') === 'none') {
+                footerDetail.slideDown();
+                footerBtn.addClass('on');
+                footerDetail.css('display', 'flex');
+                let bottom = $(document).height();
+                $('html, body').animate({
+                    scrollTop: bottom
+                })
+            }
+            else {
+                footerDetail.slideUp();
+                footerBtn.removeClass('on');
+                
+                let bottom = $(document).height();
+                $('html, body').animate({
+                    scrollTop: bottom
+                })
+            }
+
+        })
+    })//script end
+</script>
+
+<div class="footer">
+    <div class="seek bg">
+        <div class="inner">
+            <span>AMUSE 정보</span>
+            <ul class="rule">
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li><a href="#">사업자정보확인</a></li>
+            </ul><!-- .rule end -->
+        </div><!-- inner end -->
+    </div><!-- .seek and -->
+    <div class="hide bg">
+        <div class="inner">
+            <div class="left">
+                <ul>
+                    <li>주식회사 어뮤즈</li>
+                    <li>대표이사 : 김창욱, 이승민</li>
+                    <li>사업자등록번호 : 392-87-00797</li>
+                </ul>
+                <ul>
+                    <li>주소 : 경기도 성남시 분당구 분당내곡로 131 (백현동) </li>
+                    <li>통신판매신고번호 : 2018-성남분당-0179</li>
+                </ul>
+                <p>©AMUSE all right reserved.</p>
+            </div><!-- .left end -->
+            <div class="right">
+                <h4>CUSTOMER CENTER</h4>
+                <div class="cs">
+                    <strong><a href="#">1833-7689</a></strong>
+                    <ul>
+                        <li>MON - FRI 9AM - 5PM</li>
+                        <li>LUNCH 12PM - 1PM</li>
+                        <li>SAT.SUN.HOLIDAY OFF</li>
+                    </ul>
+                </div><!-- .cs end -->
+            </div><!-- .right end -->
+        </div><!-- .inner end -->
+    </div><!-- .hide end -->
+</div><!-- .footer end -->

@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amuse 리뉴얼</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="lib/common.js"></script>
+    <script>
+        $(function () {
+            let moreBtn = $('.more_btn');
+            moreBtn.mouseenter(function () {
+                $(this).addClass('on');
+            })
+            moreBtn.mouseleave(function () {
+                $(this).removeClass('on');
+            })
+
+            let item = $('.swiper-slide');
+            let itemMenu = $('.swiper-slide .menu');
+            let itemButton = $('.menu button');
+
+            $(window).resize(function () {
+                if ($(window).width() <= 1024) {
+                    itemMenu.show();
+                }
+                else {
+                    itemMenu.hide();
+                }
+            })
+
+            item.mouseenter(function (e) {
+                if ($(window).width() <= 1024) {
+                    e.preventDefault();
+                }
+                else {
+                    $(this).find('.menu').stop().fadeIn();
+                }
+            })
+            item.mouseleave(function (e) {
+                if ($(window).width() <= 1024) {
+                    e.preventDefault();
+                }
+                else {
+                    $(this).find('.menu').stop().fadeOut();
+                }
+            })
+            itemButton.mouseenter(function () {
+                $(this).css({
+                    'background': 'rgb(253, 175, 160)'
+                });
+            })
+            itemButton.mouseleave(function () {
+                $(this).css('background', 'rgba(255, 255, 255, 0.5)');
+            })
+
+            let pickItem = $('.amuse_pick .item');
+            let pickImgBox = $('.amuse_pick .img');
+
+            $(window).scroll(function () {
+                let pickItem = $('.amuse_pick .item');
+                let pickImg = $('.amuse_pick .img');
+
+                if (pickImg.position().top >= (pickItem.eq(1).position().top) / 2) {
+                    if (pickImg.position().top >= (pickItem.eq(4).position().top) / 2) {
+                        pickImg.children().removeClass('on');
+                        $('.amuse_pick .img .img3').addClass('on');
+                    }
+                    else {
+                        pickImg.children().removeClass('on');
+                        $('.amuse_pick .img .img2').addClass('on');
+                    }
+                }
+                else {
+                    pickImg.children().removeClass('on');
+                    $('.amuse_pick .img .img1').addClass('on');
+                }
+            })
+            let card = $('.brand .card');
+            let cardFront = $('.brand .card .front');
+            let cardBack = $('.brand .card .back');
+
+           /*  if ($(window).width() <= 1024) {
+                alert('먼저 클릭')
+                card.mouseenter(function (e) {
+                        e.removeClass('flip');
+                    })
+                card.click(function () {
+                    $(this).toggleClass('flip');
+                })
+            }
+            else {
+                alert('먼저 호버')
+                card.mouseenter(function () {
+                    $(this).addClass('flip');
+                })
+                card.mouseleave(function () {
+                    $(this).removeClass('flip');
+                })
+            } */
+
+            $(window).resize(function () {
+                if ($(window).width() <= 1024) {
+                    alert('수정 클릭')
+                    card.mouseenter(function (e) {
+                        e.removeClass('flip');
+                    })
+                    card.click(function () {
+                        $(this).toggleClass('flip');
+                    })
+                }
+                else {
+                    alert('수정 호버')
+                    card.mouseenter(function () {
+                        $(this).addClass('flip');
+                    })
+                    card.mouseleave(function () {
+                        $(this).removeClass('flip'); //클래스명 다르게
+                    })
+                }
+
+            })
+        })
+
+
+
+        let colorBtn = $('.see_color');
+        let colorBtnImg = $('.see_color img');
+        let colors = $('.amuse_pick .color');
+
+        colorBtn.click(function () {
+            colors.toggleClass('on');
+            colorBtnImg.toggleClass('on');
+        })//script end
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div id="banner"></div>
+        <header id="header"></header>
+
+        <main id="main">
+            <section class="main_visual">
+                <div class="swiper mainSlide">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="img/0main_visual/메인01.jpg" />
+                            <div class="text">
+                                <div class="text_inner">
+                                    <h2>AMUSE X HELLO KITTY</h2>
+                                    <p>어뮤즈와 헬로키티의 만남<br>
+                                        런칭 기대평 EVENT</p>
+                                    <span class="more_btn"><a href="#">View more</a></span>
+                                </div><!-- .text_inner end -->
+                            </div><!-- .text end -->
+                        </div><!-- .swiper-slide end -->
+                        <div class="swiper-slide">
+                            <img src="img/0main_visual/메인02.jpg" />
+                            <div class="text">
+                                <div class="text_inner">
+                                    <h2>CERAMIC FOUNDATION</h2>
+                                    <p>초밀착&초슬림 모공 커버<br>
+                                        NEW 세라믹 파운데이션 런칭</p>
+                                    <span class="more_btn"><a href="#">View more</a></span>
+                                </div><!-- .text_inner end -->
+                            </div><!-- .text end -->
+                        </div><!-- .swiper-slide end -->
+                        <div class="swiper-slide">
+                            <img src="img/0main_visual/메인03.jpg" />
+                            <div class="text">
+                                <div class="text_inner">
+                                    <h2>CERAMIC COLLECTION</h2>
+                                    <p>365일 매일, 여름에도 지속되는<br>
+                                        무결점 매끈 도자기 피부</p>
+                                    <span class="more_btn"><a href="#">View more</a></span>
+                                </div><!-- .text_inner end -->
+                            </div><!-- .text end -->
+                        </div><!-- .swiper-slide end -->
+                        <div class="swiper-slide">
+                            <img src="img/0main_visual/메인04.jpg" />
+                            <div class="text">
+                                <div class="text_inner">
+                                    <h2>CERAMIC POWDER</h2>
+                                    <p>모공&유분 보송 세범 파우더<br>
+                                        NEW 세라믹 파우더 런칭</p>
+                                    <span class="more_btn"><a href="#">View more</a></span>
+                                </div><!-- .text_inner end -->
+                            </div><!-- .text end -->
+                        </div><!-- .swiper-slide end -->
+                        <div class="swiper-slide">
+                            <img src="img/0main_visual/메인05.jpg" />
+                            <div class="text">
+                                <div class="text_inner">
+                                    <h2>CERAMIC CUSHION</h2>
+                                    <p>매끄럽게 커버된<br>
+                                        가벼운 도자기 피부</p>
+                                    <span class="more_btn"><a href="#">View more</a></span>
+                                </div><!-- .text_inner end -->
+                            </div><!-- .text end -->
+                        </div><!-- .swiper-slide end -->
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section><!-- .main_visual end -->
+
+            <section class="slide3 best">
+                <div class="inner">
+                    <div class="title">
+                        <h2>BEST</h2>
+                        <span class="more_btn"><a href="#">View more</a></span>
+                    </div><!-- .title end -->
+                    <div class="item_box">
+                        <div class="swiper bestSlide">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <figure>
+                                            <img src="img/1best/best01.jpg" alt="">
+                                            <div class="menu">
+                                                <button class="shopping_bag">
+                                                    <img src="img/00icon/shopping-bag-02.svg" alt="장바구니">
+                                                </button><!-- .shopping_bag end -->
+                                                <button class="zoom">
+                                                    <img src="img/00icon/link-external-01.svg" alt="크게보기">
+                                                </button><!-- .shopping_bag end -->
+                                            </div><!-- .menu -->
+                                        </figure>
+                                        <div class="text">
+                                            <h3>듀 틴트 듀오 세트</h3>
+                                            <p>[GIFT] 베베 립 스크럽 증정</p>
+                                            <div class="price3">
+                                                <span>25%</span>
+                                                <strong>30,000원</strong>
+                                                <s>40,000원</s>
+                                            </div><!-- .price3 end -->
+                                        </div><!-- .text end -->
+                                    </a>
+                                </div><!-- .swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <figure>
+                                            <img src="img/1best/best02.jpg" alt="">
+                                            <div class="menu">
+                                                <button class="shopping_bag">
+                                                    <img src="img/00icon/shopping-bag-02.svg" alt="장바구니">
+                                                </button><!-- .shopping_bag end -->
+                                                <button class="zoom">
+                                                    <img src="img/00icon/link-external-01.svg" alt="크게보기">
+                                                </button><!-- .shopping_bag end -->
+                                            </div><!-- .menu -->
+                                        </figure>
+                                        <div class="text">
+                                            <h3>세라믹 스킨 퍼펙터 쿠션 세트(본품+리필2ea)</h3>
+                                            <p>본품 + 리필 2ea</p>
+                                            <div class="price3">
+                                                <span>49%</span>
+                                                <strong>39,000원</strong>
+                                                <s>78,000원</s>
+                                            </div><!-- .price3 end -->
+                                        </div><!-- .text end -->
+                                    </a>
+                                </div><!-- .swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <figure>
+                                            <img src="img/1best/best03.jpg" alt="">
+                                            <div class="menu">
+                                                <button class="shopping_bag">
+                                                    <img src="img/00icon/shopping-bag-02.svg" alt="장바구니">
+                                                </button><!-- .shopping_bag end -->
+                                                <button class="zoom">
+                                                    <img src="img/00icon/link-external-01.svg" alt="크게보기">
+                                                </button><!-- .shopping_bag end -->
+                                            </div><!-- .menu -->
+                                            <div class="color">
+                                                <div class="pallette EDD4C8"></div>
+                                                <div class="pallette EBD2C0"></div>
+                                                <div class="pallette E6C9AD"></div>
+                                                <div class="pallette E1BFA2"></div>
+                                            </div><!-- .color end -->
+                                        </figure>
+                                        <div class="text">
+                                            <h3>세라믹 스킨 퍼펙터 쿠션(본품+리필)</h3>
+                                            <p>[GIFT] 퍼프 3P 증정</p>
+                                            <div class="price3">
+                                                <span>45%</span>
+                                                <strong>31,900원</strong>
+                                                <s>58,000원</s>
+                                            </div><!-- .price3 end -->
+                                        </div><!-- .text end -->
+                                    </a>
+                                </div><!-- .swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <figure>
+                                            <img src="img/1best/best04.jpg" alt="">
+                                            <div class="menu">
+                                                <button class="shopping_bag">
+                                                    <img src="img/00icon/shopping-bag-02.svg" alt="장바구니">
+                                                </button><!-- .shopping_bag end -->
+                                                <button class="zoom">
+                                                    <img src="img/00icon/link-external-01.svg" alt="크게보기">
+                                                </button><!-- .shopping_bag end -->
+                                            </div><!-- .menu -->
+                                            <div class="color">
+                                                <div class="pallette EDC6B3"></div>
+                                                <div class="pallette F0CFB0"></div>
+                                                <div class="pallette E9C299"></div>
+                                                <div class="pallette DEB482"></div>
+                                                <div class="pallette DEB482"></div>
+                                            </div><!-- .color end -->
+                                        </figure>
+                                        <div class="text">
+                                            <h3>듀 젤리 비건 쿠션 세트</h3>
+                                            <p>[GIFT] 클린 퍼프 3P 증정</p>
+                                            <div class="price3">
+                                                <span>35%</span>
+                                                <strong>35,100원</strong>
+                                                <s>54,000원</s>
+                                            </div><!-- .price3 end -->
+                                        </div><!-- .text end -->
+                                    </a>
+                                </div><!-- .swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <figure>
+                                            <img src="img/1best/best05.jpg" alt="">
+                                            <div class="menu">
+                                                <button class="shopping_bag">
+                                                    <img src="img/00icon/shopping-bag-02.svg" alt="장바구니">
+                                                </button><!-- .shopping_bag end -->
+                                                <button class="zoom">
+                                                    <img src="img/00icon/link-external-01.svg" alt="크게보기">
+                                                </button><!-- .shopping_bag end -->
+                                            </div><!-- .menu -->
+                                        </figure>
+                                        <div class="text">
+                                            <h3>듀 파워 비건 쿠션(본품+리필)</h3>
+                                            <p>[GIFT] 퍼프 3P 증정</p>
+                                            <div class="price3">
+                                                <span>35%</span>
+                                                <strong>31,900원</strong>
+                                                <s>58,000원</s>
+                                            </div><!-- .price3 end -->
+                                        </div><!-- .text end -->
+                                    </a>
+                                </div><!-- .swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <figure>
+                                            <img src="img/1best/best06.jpg" alt="">
+                                            <div class="menu">
+                                                <button class="shopping_bag">
+                                                    <img src="img/00icon/shopping-bag-02.svg" alt="장바구니">
+                                                </button><!-- .shopping_bag end -->
+                                                <button class="zoom">
+                                                    <img src="img/00icon/link-external-01.svg" alt="크게보기">
+                                                </button><!-- .shopping_bag end -->
+                                            </div><!-- .menu -->
+                                        </figure>
+                                        <div class="text">
+                                            <h3>[공식몰 단독 기획] 베베 틴트 듀오 + 키링 세트</h3>
+                                            <p>[GIFT] 퍼프 3P 증정</p>
+                                            <div class="price3">
+                                                <span>45%</span>
+                                                <strong>30,000원</strong>
+                                                <s>55,000원</s>
+                                            </div><!-- .price3 end -->
+                                        </div><!-- .text end -->
+                                    </a>
+                                </div><!-- .swiper-slide end -->
+                            </div><!-- swiper-wrapper end -->
+                            <div class="swiper-scrollbar"></div>
+                        </div>
+                    </div><!-- .item_box end -->
+                </div><!-- .inner end -->
+            </section><!-- .best end -->
+
+            <section class="slide3 new">
+                <div class="inner">
+                    <div class="title">
+                        <h2>NEW</h2>
+                        <span class="more_btn"><a href="#">View more</a></span>
+                    </div><!-- .title end -->
+                    <div class="item_box">
+                        <div class="swiper bestSlide">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <figure>
+                                            <img src="img/2new/new04.jpg" alt="">
+                                            <div class="menu">
+                                                <button class="shopping_bag">
+                                                    <img src="img/00icon/shopping-bag-02.svg" alt="장바구니">
+                                                </button><!-- .shopping_bag end -->
+                                                <button class="zoom">
+                                                    <img src="img/00icon/link-external-01.svg" alt="크게보기">
+                                                </button><!-- .shopping_bag end -->
+                                            </div><!-- .menu -->
+                                        </figure>
+                                        <div class="text">
+                                            <h3>[헬로키티 한정 에디션] 웜톤 & 쿨톤 세트</h3>
+                                            <p>듀 밤 + 베베 틴트 + 립 풀러 + 젤핏 틴트 + 아이 컬러 팔레트</p>
+                                            <div class="price3">
+                                                <strong>134,000원</strong>
+                                            </div><!-- .price3 end -->
+                                        </div><!-- .text end -->
+                                    </a>
+                                </div><!-- .swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <figure>
+                                            <img src="img/2new/new05.jpg" alt="">
+                                            <div class="menu">
+                                                <button class="shopping_bag">
+                                                    <img src="img/00icon/shopping-bag-02.svg" alt="장바구니">
+                                                </button><!-- .shopping_bag end -->
+                                                <button class="zoom">
+                                                    <img src="img/00icon/link-external-01.svg" alt="크게보기">
+                                                </button><!-- .shopping_bag end -->
+                                            </div><!-- .menu -->
+                                        </figure>
+                                        <div class="text">
+                                            <h3>[헬로키티 한정 에디션] 젤핏 틴트 + 립 풀러 듀오 세트</h3>
+                                            <p>[GIFT] 헬로키티 틴트 반지 증정</p>
+                                            <div class="price3">
+                                                <span>28%</span>
+                                                <strong>28,800원</strong>
+                                                <s>40,000원</s>
+                                            </div><!-- .price3 end -->
+                                        </div><!-- .text end -->
+                                    </a>
+                                </div><!-- .swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <figure>
+                                            <img src="img/2new/new06.jpg" alt="">
+                                            <div class="menu">
+                                                <button class="shopping_bag">
+                                                    <img src="img/00icon/shopping-bag-02.svg" alt="장바구니">
+                                                </button><!-- .shopping_bag end -->
+                                                <button class="zoom">
+                                                    <img src="img/00icon/link-external-01.svg" alt="크게보기">
+                                                </button><!-- .shopping_bag end -->
+                                            </div><!-- .menu -->
+                                            <div class="color">
+                                                <div class="pallette dd878d"></div>
+                                                <div class="pallette df7a99"></div>
+                                                <div class="pallette ff8c8b"></div>
+                                                <div class="pallette f36ea4"></div>
+                                            </div><!-- .color end -->
+                                        </figure>
+                                        <div class="text">
+                                            <h3>[헬로키티 한정 에디션] 젤핏 틴트 (4종 택1)</h3>
+                                            <p>[GIFT] 퍼프 3P 증정</p>
+                                            <div class="price3">
+                                                <span>15%</span>
+                                                <strong>17,000원</strong>
+                                                <s>20,000원</s>
+                                            </div><!-- .price3 end -->
+                                        </div><!-- .text end -->
+                                    </a>
+                                </div><!-- .swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <figure>
+                                            <img src="img/2new/new01.jpg" alt="">
+                                            <div class="menu">
+                                                <button class="shopping_bag">
+                                                    <img src="img/00icon/shopping-bag-02.svg" alt="장바구니">
+                                                </button><!-- .shopping_bag end -->
+                                                <button class="zoom">
+                                                    <img src="img/00icon/link-external-01.svg" alt="크게보기">
+                                                </button><!-- .shopping_bag end -->
+                                            </div><!-- .menu -->
+                                        </figure>
+                                        <div class="text">
+                                            <h3>세라믹 풀 페이스 세트</h3>
+                                            <p>세라믹 쿠션 + 파운데이션 + 파우더 세트</p>
+                                            <div class="price3">
+                                                <span>45%</span>
+                                                <strong> 49,500원</strong>
+                                                <s>89,000원</s>
+                                            </div><!-- .price3 end -->
+                                        </div><!-- .text end -->
+                                    </a>
+                                </div><!-- .swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <figure>
+                                            <img src="img/2new/new02.jpg" alt="">
+                                            <div class="menu">
+                                                <button class="shopping_bag">
+                                                    <img src="img/00icon/shopping-bag-02.svg" alt="장바구니">
+                                                </button><!-- .shopping_bag end -->
+                                                <button class="zoom">
+                                                    <img src="img/00icon/link-external-01.svg" alt="크게보기">
+                                                </button><!-- .shopping_bag end -->
+                                            </div><!-- .menu -->
+                                        </figure>
+                                        <div class="text">
+                                            <h3>세라믹 페이스 세트</h3>
+                                            <p>세라믹 파운데이션 + 파우더 세트</p>
+                                            <div class="price3">
+                                                <span>25%</span>
+                                                <strong>38,500원</strong>
+                                                <s>51,000원</s>
+                                            </div><!-- .price3 end -->
+                                        </div><!-- .text end -->
+                                    </a>
+                                </div><!-- .swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <figure>
+                                            <img src="img/2new/new03.jpg" alt="">
+                                            <div class="menu">
+                                                <button class="shopping_bag">
+                                                    <img src="img/00icon/shopping-bag-02.svg" alt="장바구니">
+                                                </button><!-- .shopping_bag end -->
+                                                <button class="zoom">
+                                                    <img src="img/00icon/link-external-01.svg" alt="크게보기">
+                                                </button><!-- .shopping_bag end -->
+                                            </div><!-- .menu -->
+                                        </figure>
+                                        <div class="text">
+                                            <h3>세라믹 스킨 퍼펙터 쿠션 세트(본품+리필2ea)</h3>
+                                            <p>본품 + 리필 2ea</p>
+                                            <div class="price3">
+                                                <span>49%</span>
+                                                <strong>39,000원</strong>
+                                                <s>78,000원</s>
+                                            </div><!-- .price3 end -->
+                                        </div><!-- .text end -->
+                                    </a>
+                                </div><!-- .swiper-slide end -->
+                            </div><!-- swiper-wrapper end -->
+                            <div class="swiper-scrollbar"></div>
+                        </div>
+                    </div><!-- .item_box end -->
+                </div><!-- .inner end -->
+            </section><!-- .new end -->
+
+            <section class="amuse_pick">
+                <div class="img">
+                    <div class="img1 on">
+                        <img src="img/3amusePick/pick01.jpg" alt="">
+                    </div><!-- .img1 end -->
+                    <div class="img2">
+                        <img src="img/3amusePick/pick02.jpg" alt="">
+                    </div><!-- .img2 end -->
+                    <div class="img3">
+                        <img src="img/3amusePick/pick03.jpg" alt="">
+                    </div><!-- .img3 end -->
+                </div><!-- .bg end -->
+
+                <div class="content">
+                    <div class="title">
+                        <h3>AMUSE'S PICK</h3>
+                    </div><!-- .title end -->
+
+                    <div class="item_list">
+                        <div class="item">
+                            <div class="text">
+                                <a href="#">
+                                    <p>내 피부 톤에 핏,섬세한 톤-핏 음영 컬러레이션<br>
+                                        내 눈가에 핏, 깔끔한 밀착-핏 생기 레이어링
+                                    </p>
+                                    <h4>아이 컬러 팔레트</h4>
+                                    <div class="price3">
+                                        <span>15%</span>
+                                        <strong>28,900원</strong>
+                                        <s>34,000원</s>
+                                    </div><!-- .price3 end -->
+                                </a>
+                                <span class="more_btn"><a href="#">View more</a></span>
+                            </div><!-- .text end -->
+                            <figure>
+                                <img src="img/3amusePick/pick01-3.jpg" alt="아이 컬러 팔레트">
+
+                                <div class="color">
+                                    <div class="pallette FFB1BB"></div>
+                                    <div class="pallette FE89BB"></div>
+                                    <div class="pallette E4B493"></div>
+                                    <div class="pallette FC76D9"></div>
+                                    <div class="pallette E4002B"></div>
+                                </div><!-- .color end -->
+
+                                <button class="see_color">
+                                    <img src="img/00icon/colors.svg" alt="색상 보기">
+                                </button><!-- .see_color end -->
+                            </figure>
+                        </div><!-- .item end -->
+                        <div class="item">
+                            <div class="text">
+                                <a href="#">
+                                    <p>꽃잎 이슬의 맑은 컬러 가득히 묻어남 없이<br>
+                                        촉촉 산뜻한 35% 고수분 롱래스팅 워터 틴트
+                                    </p>
+                                    <h4>듀 틴트 (12종 택1)</h4>
+                                    <div class="price3">
+                                        <strong>20,000원</strong>
+                                    </div><!-- .price3 end -->
+                                </a>
+                                <span class="more_btn"><a href="#">View more</a></span>
+                            </div><!-- .text end -->
+                            <figure>
+                                <img src="img/3amusePick/pick01-2.jpg" alt="듀 틴트 (12종 택1)">
+                            </figure>
+                        </div><!-- .item end -->
+                        <div class="item">
+                            <div class="text">
+                                <a href="#">
+                                    <p>통통한 애교살 볼륨과 반짝임을<br>
+                                        손쉽고 부드럽게 완성하는<br>
+                                        롱래스팅 애교살 볼륨 펜슬
+                                    </p>
+                                    <h4>애교살 볼륨 펜슬</h4>
+                                    <div class="price3">
+                                        <strong>20,000원</strong>
+                                    </div><!-- .price3 end -->
+                                </a>
+                                <span class="more_btn"><a href="#">View more</a></span>
+                            </div><!-- .text end -->
+                            <figure>
+                                <img src="img/3amusePick/pick02-4.jpg" alt="애교살 볼륨 펜슬">
+                            </figure>
+                        </div><!-- .item end -->
+                        <div class="item">
+                            <div class="text">
+                                <a href="#">
+                                    <p>두가지 제형과 컬러를 자유롭게 믹스하여<br>
+                                        촉촉하고 싱그러운 생과즙광을 완성하는<br>
+                                        립&치크 헬시 밤
+                                    </p>
+                                    <h4>립 앤 치크 헬시 밤 (5종 택1)</h4>
+                                    <div class="price3">
+                                        <span>16%</span>
+                                        <strong>14,400원</strong>
+                                        <s>17,000원</s>
+                                    </div><!-- .price3 end -->
+                                </a>
+                                <span class="more_btn"><a href="#">View more</a></span>
+                            </div><!-- .text end -->
+                            <figure>
+                                <img src="img/3amusePick/pick02-2.jpg" alt="립 앤 치크 헬시 밤 (5종 택1)">
+                            </figure>
+                        </div><!-- .item end -->
+                        <div class="item">
+                            <div class="text">
+                                <a href="#">
+                                    <p>맑고 선명한 탱글 젤리가 쫀쫀 밀착되는<br>
+                                        12시간 지속의 롱래스팅 젤핏 틴트
+                                    </p>
+                                    <h4>젤핏 틴트(12종 택1)</h4>
+                                    <div class="price3">
+                                        <strong>20,000원</strong>
+                                    </div><!-- .price3 end -->
+                                </a>
+                                <span class="more_btn"><a href="#">View more</a></span>
+                            </div><!-- .text end -->
+                            <figure>
+                                <img src="img/3amusePick/pick03-01.jpg" alt="젤핏 틴트(12종 택1)">
+                            </figure>
+                        </div><!-- .item end -->
+                    </div><!-- .item_list end -->
+                </div><!-- .content end -->
+            </section><!-- amuse_pick end -->
+
+            <section class="event">
+                <div class="inner">
+                    <div class="title">
+                        <h2>EVENT</h2>
+                        <span class="more_btn"><a href="#">View more</a></span>
+                    </div><!-- .title end -->
+
+                    <div class="item_wrap">
+                        <div class="item">
+                            <a href="#">
+                                <figure>
+                                    <img src="img/4event/event03.jpg" alt="">
+                                </figure>
+                                <div class="text">
+                                    <span class="progress">진행</span>
+                                    <h3>헬로키티 런칭 이벤트</h3>
+                                    <p>2024-07-16</p>
+                                </div><!-- .text end -->
+                            </a>
+                        </div><!-- .item end -->
+                        <div class="item">
+                            <a href="#">
+                                <figure>
+                                    <img src="img/4event/event.jpg" alt="">
+                                </figure>
+                                <div class="text">
+                                    <span class="end">마감</span>
+                                    <h3>어뮤즈 X 헬로키티 기대평 이벤트</h3>
+                                    <p>2024-07-16</p>
+                                </div><!-- .text end -->
+                            </a>
+                        </div><!-- .item end -->
+                        <div class="item">
+                            <a href="#">
+                                <figure>
+                                    <img src="img/4event/event02.jpg" alt="">
+                                </figure>
+                                <div class="text">
+                                    <span class="end">마감</span>
+                                    <h3>세라믹 파운데이션&파우더 런칭 이벤트</h3>
+                                    <p>2024-07-18</p>
+                                </div><!-- .text end -->
+                            </a>
+                        </div><!-- .item end -->
+                    </div><!-- .item_wrap end -->
+
+
+
+
+                </div><!-- .inner end -->
+            </section><!-- .event -->
+
+            <section class="brand">
+                <div class="inner">
+                    <div class="content">
+                        <div class="title">
+                            <h2>ABOUT AMUSE</h2>
+                        </div><!-- .title end -->
+                        <div class="text">
+                            <h3>기분 좋은 <b>비건&웰니스</b> 뷰티의 시작</h3>
+                            <p>
+                                <strong>AMUSE</strong>는 지속 가능한 가치 소비를 위한 비건&웰니스를<br>
+                                <strong>AMUSE</strong>만의 컬러로 일상에 기분 좋은 바이브를 전달하는<br>
+                                서울 베이스의 라이프스타일 비건&웰니스 뷰티 브랜드입니다.
+                            </p>
+                        </div><!-- .text end -->
+                    </div><!-- .content end -->
+
+                    <div class="card_list">
+                        <div class="card">
+                            <div class="front">
+                                <img src="img/5brandstory/brand01.png" alt="">
+                            </div><!-- front end -->
+                            <div class="back">
+                                <h4>Seoul Based Lifestyle</h4>
+                                <p>
+                                    본연의 자연스러움이 담겨진<br>
+                                    서울 베이스의<br>
+                                    라이프스타일 DNA
+                                </p>
+                            </div><!-- .back end -->
+                        </div><!-- .card end -->
+                        <div class="card">
+                            <div class="front">
+                                <img src="img/5brandstory/brand02.png" alt="">
+                            </div><!-- front end -->
+                            <div class="back">
+                                <h4>Clean & Vegan Beauty</h4>
+                                <p>
+                                    환경과 지속 가능성을<br>
+                                    생각하는 뷰티 루틴 완성,<br>
+                                    클린& 비건 뷰티 DNA
+                                </p>
+                            </div><!-- .back end -->
+                        </div><!-- .card end -->
+                        <div class="card">
+                            <div class="front">
+                                <img src="img/5brandstory/brand03.png" alt="">
+                            </div><!-- front end -->
+                            <div class="back">
+                                <h4>AMUSE's Color Code</h4>
+                                <p>
+                                    고유한 정체성과<br>
+                                    스토리를 담아낸<br>
+                                    AMUSE 컬러 DNA
+                                </p>
+                            </div><!-- .back end -->
+                        </div><!-- .card end -->
+                        <div class="card">
+                            <div class="front">
+                                <img src="img/5brandstory/brand04.png" alt="">
+                            </div><!-- front end -->
+                            <div class="back">
+                                <h4>New Digital</h4>
+                                <p>
+                                    디지털을 통한<br>
+                                    인게이지먼트를 강화하고<br>
+                                    패션, 아트, 라이프스타일에 맞는<br>
+                                    차별화된 뉴 룩 DNA
+                                </p>
+                            </div><!-- .back end -->
+                        </div><!-- .card end -->
+                    </div><!-- .card_list end -->
+                </div><!-- .inner end -->
+            </section><!-- .brand end -->
+
+            <section class="ad">
+                <div class="swiper adSlide">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <img src="img/6banner/banner01.png" alt="">
+                            </a>
+                        </div><!-- .swiper-slide end -->
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <img src="img/6banner/banner02.png" alt="">
+                            </a>
+                        </div><!-- .swiper-slide end -->
+                    </div>
+            </section><!-- .ad end -->
+
+            <section class="refurb">
+                <div class="inner">
+                    <figure class="refurb_main">
+                        <img src="img/7refub/refub_main.png" alt="">
+                        <div class="title">
+                            <h2>REFURB #</h2>
+                            <span class="more_btn"><a href="#">View more</a></span>
+                        </div><!-- .text end -->
+                        <p>해당 제품은 단종 예정 혹은 사용기한 1년 미만 상품들입니다.</p>
+                    </figure><!-- .refurb_main end -->
+                    <div class="item_list">
+                        <div class="item">
+                            <figure>
+                                <img src="img/7refub/refub01.jpg" alt="">
+                            </figure>
+                            <div class="text">
+                                <h3>[REFURB#] 비건 복숭아 크림 02 베어</h3>
+                                <p>#클린비건 #복숭아결톤업 #복숭아빛광채 #생기밀착</p>
+                                <div class="price3">
+                                    <span>89%</span>
+                                    <strong>3,000원</strong>
+                                    <s>26,000원</s>
+                                </div><!-- .price3 end -->
+                            </div><!-- .text end -->
+                        </div><!-- .item end -->
+                        <div class="item">
+                            <figure>
+                                <img src="img/7refub/refub02.jpg" alt="">
+                            </figure>
+                            <div class="text">
+                                <h3>[REFURB#] 피톤시카 라하 리부트 토너</h3>
+                                <p>#수분진정 #산뜻보습 #피부활력 #저자극케어</p>
+                                <div class="price3">
+                                    <span>84%</span>
+                                    <strong>3,000원</strong>
+                                    <s>18,000원</s>
+                                </div><!-- .price3 end -->
+                            </div><!-- .text end -->
+                        </div><!-- .item end -->
+                    </div><!-- .item_list end -->
+                </div><!-- .inner end -->
+            </section><!-- .refurb end -->
+
+            <section class="sns">
+                <div class="inner">
+                    <div class="ticktok">
+                        <h2>AMUSE <b>Ticktok</b></h2>
+                        <figure>
+                            <a href="#">
+                                <video autoplay loop muted>
+                                    <source src="img/8sns/sns-video.mp4" type="video/mp4" />
+                                </video>
+                            </a>
+                        </figure>
+                    </div><!-- .ticktok end -->
+
+                    <div class="instagram">
+                        <div class="text">
+                            <a href="#">
+                                Follow Us<br>
+                                <b>@amuse</b>
+                            </a>
+                        </div><!-- .text end -->
+                        <div class="content">
+                            <h2>AMUSE <b>Instagram</b></h2>
+                            <figure>
+                                <a href="#"><img src="img/8sns/sns04.jpg" alt="어뮤즈 인스타그램"></a>
+                            </figure>
+                        </div><!-- content -->
+                    </div><!-- .instagram end -->
+                    <ul class="sns_group">
+                        <li>
+                            <a href="#">
+                                <img src="img/00icon/instagram.svg" alt="인스타그램 바로가기">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/00icon/tiktok.svg" alt="틱톡 바로가기">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/00icon/twitter.svg" alt="트위터 바로가기">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/00icon/kakao.svg" alt="카카오톡 바로가기">
+                            </a>
+                        </li>
+                    </ul><!-- .sns_group end -->
+                </div><!-- .inner end -->
+            </section><!-- .sns end -->
+        </main><!-- #main end -->
+
+        <footer id="footer"></footer>
+    </div><!-- .wrap end -->
+
+    <script>
+        var swiper = new Swiper(".mainSlide", {
+            loop: true,
+            effect: "fade",
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+        });
+
+        var swiper = new Swiper(".bestSlide", {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            scrollbar: {
+                el: ".swiper-scrollbar",
+                hide: true,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                },
+                1025: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                }
+            }
+        });
+
+        var swiper = new Swiper(".adSlide", {
+            loop: true,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+        });
+    </script>
+
+</body>
+
+</html>
