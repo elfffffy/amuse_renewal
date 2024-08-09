@@ -97,18 +97,16 @@
                     $(this).removeClass('flip');
                 })
             }
-        })
 
+            let colorBtn = $('.see_color');
+            let colorBtnImg = $('.see_color img');
+            let colors = $('.amuse_pick .color');
 
-
-        let colorBtn = $('.see_color');
-        let colorBtnImg = $('.see_color img');
-        let colors = $('.amuse_pick .color');
-
-        colorBtn.click(function () {
-            colors.toggleClass('on');
-            colorBtnImg.toggleClass('on');
-        })//script end
+            colorBtn.click(function () {
+                colors.toggleClass('on');
+                colorBtnImg.toggleClass('on');
+            })
+        })//script end 
     </script>
 </head>
 

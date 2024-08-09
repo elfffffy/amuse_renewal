@@ -977,16 +977,16 @@ section {
     width: 150px;
 }
 
-.event .title span.more_btn::after {
-    right: 0 !important;
+#main .event .title span.more_btn::after {
+    right: 0;
 }
 
-.event .title span.more_btn::before {
-    right: 25px !important;
+#main .event .title span.more_btn::before {
+    right: 25px;
 }
 
-.event .title .more_btn.on::before {
-    right: 7px !important;
+#main .event .title .more_btn.on::before {
+    right: 7px;
 }
 
 .event .item_wrap {
@@ -1845,6 +1845,9 @@ section {
         height: 20px;
     }
 
+    #main .more_btn.on::before {
+        right: -42px;
+    }
     #main .more_btn::after {
         width: 30px;
         height: 30px;
@@ -1958,6 +1961,18 @@ section {
         height: 20px;
         line-height: 20px;
         font-size: 14px;
+    }
+
+    #main .event .title span.more_btn::after {
+        right: -45px;
+    }
+    
+    #main .event .title span.more_btn::before {
+        right: -30px;
+    }
+    
+    #main .event .title .more_btn.on::before {
+        right: -42px;
     }
 
     .event .item_wrap .item .text p {
