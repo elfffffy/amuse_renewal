@@ -156,7 +156,7 @@ section {
 }
 
 .header.on {
-    background-color: rgba(116, 87, 87, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .header>.inner {
