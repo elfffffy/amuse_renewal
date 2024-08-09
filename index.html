@@ -84,46 +84,19 @@
             let cardFront = $('.brand .card .front');
             let cardBack = $('.brand .card .back');
 
-            /*  if ($(window).width() <= 1024) {
-                 alert('먼저 클릭')
-                 card.mouseenter(function (e) {
-                         e.removeClass('flip');
-                     })
-                 card.click(function () {
-                     $(this).toggleClass('flip');
-                 })
-             }
-             else {
-                 alert('먼저 호버')
-                 card.mouseenter(function () {
-                     $(this).addClass('flip');
-                 })
-                 card.mouseleave(function () {
-                     $(this).removeClass('flip');
-                 })
-             } */
-
-            $(window).resize(function () {
-                if ($(window).width() <= 1024) {
-                    //alert('수정 클릭')
-                    card.mouseenter(function (e) {
-                        e.removeClass('flip');
-                    })
-                    card.click(function () {
-                        $(this).toggleClass('flip');
-                    })
-                }
-                else {
-                    //alert('수정 호버')
-                    card.mouseenter(function () {
-                        $(this).addClass('flip');
-                    })
-                    card.mouseleave(function () {
-                        $(this).removeClass('flip'); //클래스명 다르게
-                    })
-                }
-
-            })
+            if ($(window).width() <= 1024) {
+                card.click(function () {
+                    $(this).toggleClass('flip');
+                })
+            }
+            else {
+                card.mouseenter(function () {
+                    $(this).addClass('flip');
+                })
+                card.mouseleave(function () {
+                    $(this).removeClass('flip');
+                })
+            }
         })
 
 

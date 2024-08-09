@@ -1183,8 +1183,16 @@ section {
     transform: rotateY(180deg);
     opacity: 0;
 }
+.brand .inner .card_list .card.flip2 .front {
+    transform: rotateY(180deg);
+    opacity: 0;
+}
 
 .brand .inner .card_list .card.flip .back {
+    transform: rotateY(0);
+    opacity: 1;
+}
+.brand .inner .card_list .card.flip2 .back {
     transform: rotateY(0);
     opacity: 1;
 }
