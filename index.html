@@ -13,12 +13,20 @@
     <script>
         $(function () {
             let moreBtn = $('.more_btn');
-            moreBtn.mouseenter(function () {
-                $(this).addClass('on');
-            })
-            moreBtn.mouseleave(function () {
-                $(this).removeClass('on');
-            })
+
+            if ($(window).width() <= 1024) {
+                moreBtn.mouseenter(function(e){
+                    e.preventDefault();
+                })
+            }
+            else {
+                moreBtn.mouseenter(function () {
+                    $(this).addClass('on');
+                })
+                moreBtn.mouseleave(function () {
+                    $(this).removeClass('on');
+                })
+            }
 
             let item = $('.swiper-slide');
             let itemMenu = $('.swiper-slide .menu');
@@ -120,7 +128,8 @@
                 <div class="swiper mainSlide">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img src="img/0main_visual/메인01.jpg" alt="AMUSE X HELLO KITTY">
+                            <img class="pcVisual" src="img/0main_visual/메인01.jpg" alt="AMUSE X HELLO KITTY">
+                            <img class="mobileVisual" src="img/0main_visual/m01.jpg" alt="AMUSE X HELLO KITTY">
                             <div class="text">
                                 <div class="text_inner">
                                     <h2>AMUSE X HELLO KITTY</h2>
@@ -131,7 +140,8 @@
                             </div><!-- .text end -->
                         </div><!-- .swiper-slide end -->
                         <div class="swiper-slide">
-                            <img src="img/0main_visual/메인02.jpg" alt="CERAMIC FOUNDATION">
+                            <img class="pcVisual" src="img/0main_visual/메인02.jpg" alt="CERAMIC FOUNDATION">
+                            <img class="mobileVisual" src="img/0main_visual/m02.jpg" alt="AMUSE X HELLO KITTY">
                             <div class="text">
                                 <div class="text_inner">
                                     <h2>CERAMIC FOUNDATION</h2>
@@ -142,7 +152,8 @@
                             </div><!-- .text end -->
                         </div><!-- .swiper-slide end -->
                         <div class="swiper-slide">
-                            <img src="img/0main_visual/메인03.jpg" alt="CERAMIC COLLECTION">
+                            <img class="pcVisual" src="img/0main_visual/메인03.jpg" alt="CERAMIC COLLECTION">
+                            <img class="mobileVisual" src="img/0main_visual/m03.jpg" alt="AMUSE X HELLO KITTY">
                             <div class="text">
                                 <div class="text_inner">
                                     <h2>CERAMIC COLLECTION</h2>
@@ -153,7 +164,8 @@
                             </div><!-- .text end -->
                         </div><!-- .swiper-slide end -->
                         <div class="swiper-slide">
-                            <img src="img/0main_visual/메인04.jpg" alt="CERAMIC POWDER">
+                            <img class="pcVisual" src="img/0main_visual/메인04.jpg" alt="CERAMIC POWDER">
+                            <img class="mobileVisual" src="img/0main_visual/m04.jpg" alt="AMUSE X HELLO KITTY">
                             <div class="text">
                                 <div class="text_inner">
                                     <h2>CERAMIC POWDER</h2>
@@ -164,7 +176,8 @@
                             </div><!-- .text end -->
                         </div><!-- .swiper-slide end -->
                         <div class="swiper-slide">
-                            <img src="img/0main_visual/메인05.jpg" alt="CERAMIC CUSHION">
+                            <img class="pcVisual" src="img/0main_visual/메인05.jpg" alt="CERAMIC CUSHION">
+                            <img class="mobileVisual" src="img/0main_visual/m05.jpg" alt="AMUSE X HELLO KITTY">
                             <div class="text">
                                 <div class="text_inner">
                                     <h2>CERAMIC CUSHION</h2>
@@ -920,7 +933,7 @@
                 hide: true,
             },
             breakpoints: {
-                768: {
+                391: {
                     slidesPerView: 2,
                     spaceBetween: 30,
                 },
