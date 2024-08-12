@@ -65,11 +65,17 @@
         let langBox = $('.lang .depth02');
         let langList = $('.lang .depth02 li');
 
+        let mobileMenu = $('.mobile_menu .menu');
+        let mobileNav = $('.mobile_menu_content');
+        let mobileClose = $('.mobile_menu .close');
+
         searchBtn.click(function () {
             searchBox.slideDown();
+            mobileMenu.hide();
         })
         searchCloseBtn.click(function () {
             searchBox.slideUp();
+            mobileMenu.show(600);
         })
         langBtn.click(function () {
             langBox.slideToggle();
@@ -79,10 +85,6 @@
             $(this).addClass('on');
             langBox.slideUp();
         })
-
-        let mobileMenu = $('.mobile_menu .menu');
-        let mobileNav = $('.mobile_menu_content');
-        let mobileClose = $('.mobile_menu .close');
 
         mobileMenu.click(function () {
             mobileNav.css('left', '0');
