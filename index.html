@@ -15,7 +15,7 @@
             let moreBtn = $('.more_btn');
 
             if ($(window).width() <= 1024) {
-                moreBtn.mouseenter(function(e){
+                moreBtn.mouseenter(function (e) {
                     e.preventDefault();
                 })
             }
@@ -83,9 +83,53 @@
                         $('.amuse_pick .img .img2').addClass('on');
                     }
                 }
-                else {
+
+                if (pickImg.position().top < (pickItem.eq(1).position().top) / 2) {
                     pickImg.children().removeClass('on');
                     $('.amuse_pick .img .img1').addClass('on');
+                }
+
+                let pickBg = $('.amuse_pick .pick_bg');
+                if (pickBg.position().top >= (pickItem.eq(1).position().top)) {
+                    if ($(window).width() > 767) {
+                        if (pickBg.position().top >= (pickItem.eq(3).position().top) - 220) {
+                            pickBg.children().removeClass('on');
+                            $('.amuse_pick .pick_bg3').addClass('on');
+                        }
+                        else {
+                            pickBg.children().removeClass('on');
+                            $('.amuse_pick .pick_bg2').addClass('on');
+                        }
+                    }
+
+                    if ($(window).width() > 480) {
+                        if (pickBg.position().top >= (pickItem.eq(3).position().top) - 300) {
+                            pickBg.children().removeClass('on');
+                            $('.amuse_pick .pick_bg3').addClass('on');
+                        }
+                        else {
+                            pickBg.children().removeClass('on');
+                            $('.amuse_pick .pick_bg2').addClass('on');
+                        }
+                    }
+
+                    if ($(window).width() <= 480) {
+                        if (pickBg.position().top >= (pickItem.eq(3).position().top) - 150) {
+                            pickBg.children().removeClass('on');
+                            $('.amuse_pick .pick_bg3').addClass('on');
+                        }
+                        else {
+                            pickBg.children().removeClass('on');
+                            $('.amuse_pick .pick_bg2').addClass('on');
+                        }
+                    }
+
+
+
+                }
+                if (pickBg.position().top < (pickItem.eq(1).position().top)) {
+                    pickBg.children().removeClass('on');
+                    $('.amuse_pick .pick_bg1').addClass('on');
                 }
             })
             let card = $('.brand .card');
@@ -542,7 +586,13 @@
                     <div class="img3">
                         <img src="img/3amusePick/pick03.jpg" alt="어뮤즈가 추천하는 상품">
                     </div><!-- .img3 end -->
-                </div><!-- .bg end -->
+                </div><!-- .img end -->
+
+                <div class="pick_bg">
+                    <div class="pick_bg1 on"><span>어뮤즈픽 배경1</span></div>
+                    <div class="pick_bg2"><span>어뮤즈픽 배경2</span></div>
+                    <div class="pick_bg3"><span>어뮤즈픽 배경3</span></div>
+                </div><!-- .pick_bg end -->
 
                 <div class="content">
                     <div class="title">
@@ -672,8 +722,10 @@
                                 </figure>
                                 <div class="text">
                                     <span class="progress">진행</span>
-                                    <h3>헬로키티 런칭 이벤트</h3>
-                                    <p>2024-07-16</p>
+                                    <div class="title_date">
+                                        <h3>헬로키티 런칭 이벤트</h3>
+                                        <p>2024-07-16</p>
+                                    </div><!-- .title_date end -->
                                 </div><!-- .text end -->
                             </a>
                         </div><!-- .item end -->
@@ -716,7 +768,7 @@
                             <h2>ABOUT AMUSE</h2>
                         </div><!-- .title end -->
                         <div class="text">
-                            <h3>기분 좋은 <b>비건&웰니스</b> 뷰티의 시작</h3>
+                            <h3>기분 좋은 <b>비건&웰니스</b> <br>뷰티의 시작</h3>
                             <p>
                                 <strong>AMUSE</strong>는 지속 가능한 가치 소비를 위한 비건&웰니스를<br>
                                 <strong>AMUSE</strong>만의 컬러로 일상에 기분 좋은 바이브를 전달하는<br>
@@ -919,10 +971,10 @@
                 el: ".swiper-pagination",
                 clickable: true,
             },
-            // autoplay: {
-            //     delay: 3500,
-            //     disableOnInteraction: false,
-            // },
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
         });
 
         var swiper = new Swiper(".bestSlide", {
@@ -933,9 +985,9 @@
                 hide: true,
             },
             breakpoints: {
-                391: {
+                481: {
                     slidesPerView: 2,
-                    spaceBetween: 30,
+                    spaceBetween: 20,
                 },
                 1025: {
                     slidesPerView: 3,
