@@ -158,6 +158,31 @@
                 colors.toggleClass('on');
                 colorBtnImg.toggleClass('on');
             })
+
+            let sideBtn = $('.side_bar .side_bar_main');
+            let sideBtnImg = $('.side_bar .side_bar_main img');
+            let sideList = $('.side_bar .side_bar_list li');
+            let sideUp = $('.go_to_up');
+            let sideDown = $('.go_to_down');
+
+            sideBtn.click(function(){
+                sideList.toggleClass('on');
+                sideBtnImg.toggleClass('on');
+            })
+
+            sideUp.click(function(){
+                $('html, body').animate({
+                    scrollTop : 0
+                })
+            })
+
+            let bottom = $(document).height();
+            sideDown.click(function(){
+                $('html, body').animate({
+                    scrollTop : bottom
+                })
+            })
+ 
         })//script end 
     </script>
 </head>
@@ -957,6 +982,30 @@
         </main><!-- #main end -->
 
         <footer id="footer"></footer>
+
+
+        <div class="side_bar">
+            <ul class="side_bar_list">
+                <li>
+                    <button class="go_to_up">
+                        <img src="img/00icon/chevron-up.svg" alt="맨 위로 가기">
+                    </button>
+                </li>
+                <li>
+                    <button class="go_to_talk">
+                        <img src="img/00icon/message-smile-circle.svg" alt="카카오톡 상담">
+                    </button>
+                </li>
+                <li>
+                    <button class="go_to_down">
+                        <img src="img/00icon/chevron-up.svg" alt="맨 아래로 가기">
+                    </button>
+                </li>
+            </ul><!-- .side_bar_list end -->
+            <button class="side_bar_main">
+                <img src="img/floatmenu.png" alt="사이드 바 메뉴 보기">
+            </button><!-- side_bar -->
+        </div><!-- side_bar end -->
     </div><!-- .wrap end -->
 
     <script>
