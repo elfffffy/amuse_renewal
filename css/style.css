@@ -67,6 +67,23 @@ body.scroll {
     z-index: 999999999;
 }
 
+.modal.pc .close {
+    position: absolute;
+    top: 50%;
+    right: -90px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    z-index: 999999999;
+    background-color: transparent;
+    border: 1px solid #fff;
+    width: 70px;
+    padding: 8px;
+    border-radius: 1000px;
+    font-family: var(--fontMain);
+}
+
 .modal.mobile .close {
     position: absolute;
     top: 40px;
