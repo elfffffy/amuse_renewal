@@ -165,29 +165,114 @@
             let sideUp = $('.go_to_up');
             let sideDown = $('.go_to_down');
 
-            sideBtn.click(function(){
+            sideBtn.click(function () {
                 sideList.toggleClass('on');
                 sideBtnImg.toggleClass('on');
             })
 
-            sideUp.click(function(){
+            sideUp.click(function () {
                 $('html, body').animate({
-                    scrollTop : 0
+                    scrollTop: 0
                 })
             })
 
             let bottom = $(document).height();
-            sideDown.click(function(){
+            sideDown.click(function () {
                 $('html, body').animate({
-                    scrollTop : bottom
+                    scrollTop: bottom
                 })
             })
- 
+
+            var swiper = new Swiper(".mySwiper", {
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+
+            let closeBtn = $('.modal .close');
+            let modal = $('.modal');
+
+            $('body').addClass('scroll');
+
+            closeBtn.click(function(){
+                modal.fadeOut();
+                $('body').removeClass('scroll');
+            })
+
         })//script end 
     </script>
 </head>
 
 <body>
+    <div class="pc modal">
+        <h2>📝안내 가이드
+            <button class="close">
+                닫기
+            </button><!-- .close end  -->
+        </h2>
+        
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="img/modal/desktop01.png" alt="코치마크1">
+                </div><!-- swiper-slide end -->
+                <div class="swiper-slide">
+                    <img src="img/modal/desktop02.png" alt="코치마크2">
+                </div><!-- swiper-slide end -->
+                <div class="swiper-slide">
+                    <img src="img/modal/desktop03.png" alt="코치마크3">
+                </div><!-- swiper-slide end -->
+                <div class="swiper-slide">
+                    <img src="img/modal/desktop04.png" alt="코치마크4">
+                </div><!-- swiper-slide end -->
+                <div class="swiper-slide">
+                    <img src="img/modal/desktop05.png" alt="코치마크5">
+                </div><!-- swiper-slide end -->
+                <div class="swiper-slide">
+                    <img src="img/modal/desktop06.png" alt="코치마크6">
+                </div><!-- swiper-slide end -->
+                <div class="swiper-slide">
+                    <img src="img/modal/desktop07.png" alt="코치마크7">
+                </div><!-- swiper-slide end -->
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div><!-- .modal end -->
+
+    <div class="mobile modal">
+        <h2>📝안내 가이드
+            
+        </h2>
+        <button class="close">
+            닫기
+        </button><!-- .close end  -->
+        
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="img/modal/mobile01.png" alt="코치마크1">
+                </div><!-- swiper-slide end -->
+                <div class="swiper-slide">
+                    <img src="img/modal/mobile02.png" alt="코치마크2">
+                </div><!-- swiper-slide end -->
+                <div class="swiper-slide">
+                    <img src="img/modal/mobile03.png" alt="코치마크3">
+                </div><!-- swiper-slide end -->
+                <div class="swiper-slide">
+                    <img src="img/modal/mobile04.png" alt="코치마크4">
+                </div><!-- swiper-slide end -->
+                <div class="swiper-slide">
+                    <img src="img/modal/mobile05.png" alt="코치마크5">
+                </div><!-- swiper-slide end -->
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div><!-- .modal end -->
+
+
     <div class="wrap">
         <div id="banner"></div>
         <header id="header"></header>

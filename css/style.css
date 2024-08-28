@@ -27,6 +27,89 @@ html {
 body {
     font-size: 1.6rem;
     font-family: var(--fontMain);
+    position: relative;
+}
+
+body.scroll {
+    overflow: hidden;
+}
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    z-index: 99999999;
+}
+
+.modal.on {
+    display: none;
+}
+
+.modal h2 {
+    position: absolute;
+    top: 40px;
+    left: 80px;
+    color: hsl(0, 0%, 100%);
+    font-size: 50px;
+    z-index: 999999999;
+}
+
+.modal.mobile h2 {
+    position: absolute;
+    top: 40px;
+    left: 50px;
+    color: #fff;
+    font-size: 28px;
+    z-index: 999999999;
+}
+
+.modal.mobile .close {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    z-index: 999999999;
+    background-color: transparent;
+    border: 1px solid #fff;
+    width: 70px;
+    padding: 8px;
+    border-radius: 1000px;
+    font-family: var(--fontMain);
+}
+
+.modal .swiper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.modal .swiper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.swiper-button-next, 
+.swiper-button-prev {
+    color: #fff;
+}
+
+.swiper-button-next {
+    right: 50px;
+}
+
+.swiper-button-prev {
+    left: 50px;
 }
 
 .mobile {
