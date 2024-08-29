@@ -183,19 +183,12 @@
                 })
             })
 
-            var swiper = new Swiper(".mySwiper", {
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                },
-            });
-
             let closeBtn = $('.modal .close');
             let modal = $('.modal');
 
             $('body').addClass('scroll');
 
-            closeBtn.click(function(){
+            closeBtn.click(function () {
                 modal.fadeOut();
                 $('body').removeClass('scroll');
             })
@@ -211,8 +204,8 @@
                 닫기
             </button><!-- .close end  -->
         </h2>
-        
-        <div class="swiper mySwiper">
+
+        <div class="swiper modalSlide">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <img src="img/modal/desktop01.png" alt="코치마크1">
@@ -243,12 +236,12 @@
 
     <div class="mobile modal">
         <h2>📝안내 가이드
-            
+
         </h2>
         <button class="close">
             닫기
         </button><!-- .close end  -->
-        
+
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -1136,6 +1129,13 @@
             autoplay: {
                 delay: 2500,
                 disableOnInteraction: false,
+            },
+        });
+
+        var swiper = new Swiper(".modalSlide", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
             },
         });
     </script>
