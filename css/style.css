@@ -2810,6 +2810,10 @@ section {
     .footer .hide .right h4 {
         display: none;
     }
+
+    .brand .inner .content .text p br {
+        display: none;
+    }
 }
 
 /* 640px */
