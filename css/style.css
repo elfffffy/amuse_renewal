@@ -27,7 +27,6 @@ html {
 body {
     font-size: 1.6rem;
     font-family: var(--fontMain);
-    position: relative;
 }
 
 body.scroll {
@@ -116,16 +115,16 @@ body.scroll {
     object-fit: contain;
 }
 
-.swiper-button-next, 
-.swiper-button-prev {
+.modal .swiper-button-next, 
+.modal .swiper-button-prev {
     color: #fff;
 }
 
-.swiper-button-next {
+.modal .swiper-button-next {
     right: 50px;
 }
 
-.swiper-button-prev {
+.modal .swiper-button-prev {
     left: 50px;
 }
 
